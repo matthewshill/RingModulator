@@ -15,10 +15,6 @@ enum ModulationSignal
     Triangle
 };
 
-/**
- * Applies a ring modulation DSP effect
- * See: https://en.wikipedia.org/wiki/Ring_modulation
- */
 class RingModulatorFX
 {
 public:
@@ -36,13 +32,6 @@ public:
         RingModMix = DryWetMix;
     }
 
-    /**
-     * Applies a ring modulation DSP effect to an audio buffer
-     * 
-     * @note The audio buffer should be modified inline/in-place
-     * @param Buffer    Contains the audio data as a sequence of floats as well as
-     *                  other relevant info... see the AudioBuffer for further details
-     */
     void ProcessBuffer(AudioBuffer* Buffer)
     {
         switch (RingModSignal)
